@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>72</y>
+      <w>208</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>PatientFile
+--
+- id: Long
+- dateCreationFiche: Date
+- rdvPatients : Collection&lt;Date&gt;
+
+// autre informations
+- firstName: String
+- lastName: String
+- national_identity_card : String
+- dateOfBirth: Date
+- profession: String
+- address: String
+- telephone: String
+- gender: enum
+- weight: float
+- size: int
+- typeDeMutuel: String
+- numMatriculeMutuel: String
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>856</x>
+      <y>0</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>AppointmentPatient
+--
+- id : Long
+- dateAppointment: Date
+- hourAppointment: Time
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>40</y>
+      <w>80</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=*
+est fixe &gt;
+
+</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>320</y>
+      <w>200</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Consultation
+--
+- id : Long
+- dateConsultation: Date
+- reason_consultation: String
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>328</y>
+      <w>320</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Prescription (Ordonnance)
+--
+- id: Long 
+- date_prescription : Date
+- medicament : Map&lt;String,String&gt; // &lt;name,details&gt; 
+
+
+
+
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>320</y>
+      <w>352</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+
+&lt; peut avoir</panel_attributes>
+    <additional_attributes>10.0;30.0;420.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>856</x>
+      <y>400</y>
+      <w>112</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+
+m2=1
+peut donne lieu</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>840</x>
+      <y>496</y>
+      <w>232</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Certificate
+--
+- id: Long
+- certificateType : [Aptitude,Medical,Dispense]
+- dateCreationCert: Date
+- commentCertificate: String
+
+- firstName : String
+- lastName : String
+- national_identity_card: String
+- dateBirth: Date 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>536</y>
+      <w>200</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>MedicalExam
+--
+- id : Long
+- description_exam  : String
+- date_demand : Date
+
+
+
+/*
+- Examen demandé :
+- Contexte clinique (informations cliniques) :
+- Diagnostic recherché (finalité) : 
+- Informations pertinentes supplémentaires :
+*/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>368</y>
+      <w>224</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+peut necessite &gt;</panel_attributes>
+    <additional_attributes>10.0;210.0;100.0;120.0;260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1144</x>
+      <y>384</y>
+      <w>80</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Controlleur
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>104</x>
+      <y>432</y>
+      <w>112</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=*
+peut contient &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>528</y>
+      <w>168</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>medicament
+--
+- id : Long
+- nameMedicament :String
+- formMedicament :String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1088</x>
+      <y>200</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Appointment ===&gt; list
+--
+- id : Long
+- dateAppointment: Date
+- hourAppointment: Time
+- fullName : String
+- telephone : String
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>64</y>
+      <w>272</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>AppointmentPatient
+--
+- id : Long
+- dateAppointment: Date
+- hourAppointment: Time
+
+- isHasFile : boolean // disable btn add patient
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>136</y>
+      <w>184</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+
+m2=1
+peut donne lieu pour cree</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>632</x>
+      <y>112</y>
+      <w>312</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*
+effectue &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;370.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>56</x>
+      <y>656</y>
+      <w>304</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>les examens complémentaires :
+- l'imagerie médicale:
+     -radiographie
+     -tomodensitométrie
+     -IRM
+     -scintigraphie
+     -échographie
+     -fond d'œil
+- La biologie médicale avec les prises de sang.
+- La mesure de la tension artérielle.
+- La mesure de la saturation en O2 au doigt.
+- D'autres examens portant sur la physiologie
+tels que des tests d'effort ou des tests de souffle.
+- Des tests psychologiques.
+- etc.</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
